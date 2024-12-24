@@ -1,18 +1,14 @@
 import './style.css';
-import joulupöytä from './assets/restaurant.jpg';
+import { homePage } from './home';
+import { menuPage } from './menu';
+import { aboutPage } from './about';
 
-const contentContainer = document.getElementById('content');
+homePage();
 
-const h1 = document.createElement('h1');
-h1.textContent = 'Jouluruoka.com';
-contentContainer.appendChild(h1);
+const kotiTab = document.getElementById('koti');
+const menuTab = document.getElementById('menu');
+const meistäTab = document.getElementById('meistä');
 
-const img = document.createElement('img');
-img.src = joulupöytä;
-img.setAttribute('alt', 'Joulupöytä');
-img.className = 'restaurant-img';
-contentContainer.appendChild(img);
-
-const p = document.createElement('p');
-p.textContent = 'Kinkkua, laatikoita ja hetelmiä';
-contentContainer.appendChild(p);
+kotiTab.addEventListener('click', homePage);
+menuTab.addEventListener('click', menuPage);
+meistäTab.addEventListener('click', aboutPage);
